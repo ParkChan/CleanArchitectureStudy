@@ -75,7 +75,7 @@ object DaggerHiltConfig {
 
     //dagger-hilt
     const val ANDROID = "com.google.dagger:hilt-android:$HILT_VER"
-    const val ANDROID_COMPILER = "com.google.dagger:hilt-compiler:$HILT_VER"
+    const val COMPILER = "com.google.dagger:hilt-compiler:$HILT_VER"
     const val TEST = "com.google.dagger:hilt-android-testing:$HILT_VER"
 
 }
