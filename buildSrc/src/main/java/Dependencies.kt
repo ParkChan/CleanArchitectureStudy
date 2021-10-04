@@ -5,7 +5,6 @@ object Kotlin {
 object RootConfig {
     const val GRADLE = "com.android.tools.build:gradle:7.0.2"
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.VERSION}"
-    const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:2.28-alpha"
 }
 
 object AndroidConfig {
@@ -73,6 +72,8 @@ object GoogleConfig {
 object DaggerHiltConfig {
     private const val HILT_VER = "2.28-alpha"
     private const val HILT_JETPACK_VER = "1.0.0-alpha01"
+
+    const val PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$HILT_VER"
 
     //dagger-hilt
     const val ANDROID = "com.google.dagger:hilt-android:$HILT_VER"
