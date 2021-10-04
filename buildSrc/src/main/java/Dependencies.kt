@@ -57,8 +57,8 @@ object AndroidXConfig {
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:1.1.3"
 
     //ActivityResultContract
-    const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.2.0-alpha06"
-    const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.3.0-alpha06"
+    const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.3.1"
+    const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.3.6"
 
     //Paging 3.0 core dependencies Injection
     const val PAGING = "androidx.paging:paging-runtime:$PAGING_VERSION"
