@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id 'kotlin-kapt'
 }
 
 java {
@@ -10,4 +11,24 @@ java {
 
 dependencies {
     implementation(project(":domain"))
+
+    implementation CoroutineConfig.CORE
+    testImplementation CoroutineConfig.TEST
+
+    implementation NetworkConfig.RETROFIT
+    implementation NetworkConfig.LOGGING_INTERCEPTOR
+    implementation NetworkConfig.CONVERTER_MOSHI
+
+    implementation NetworkConfig.MOSHI_KOTLIN
+    kapt NetworkConfig.MOSHI_KOTLIN_CODEGEN
+
+    testImplementation TestConfig.JUNIT_JUPITER_API
+    testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
+    testImplementation TestConfig.JUNIT_JUPITER_PARAMS
+    testImplementation TestConfig.ASSERTJ_CORE
+    testImplementation TestConfig.MOCKK
+}
+
+test {
+    useJUnitPlatform()
 }

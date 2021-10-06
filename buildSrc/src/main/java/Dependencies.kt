@@ -1,10 +1,13 @@
 object Kotlin {
     const val VERSION = "1.5.31"
 }
+private const val HILT_VER = "2.28-alpha"
 
-object RootConfig {
+object ProjectConfig {
     const val GRADLE = "com.android.tools.build:gradle:7.0.2"
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.VERSION}"
+    const val PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$HILT_VER"
+    const val ANDROID_JUNIT5 = "de.mannodermaus.gradle.plugins:android-junit5:1.8.0.0"
 }
 
 object AndroidConfig {
@@ -38,9 +41,10 @@ object TestConfig {
     const val JUNIT_JUPITER_API = "org.junit.jupiter:junit-jupiter-api:$JUNIT_VERSION"
     const val JUNIT_JUPITER_ENGINE = "org.junit.jupiter:junit-jupiter-engine:$JUNIT_VERSION"
     const val JUNIT_JUPITER_PARAMS = "org.junit.jupiter:junit-jupiter-params:$JUNIT_VERSION"
-    const val ASSERT_CORE = "org.assertj:assertj-core:3.21.0"
+    const val ASSERTJ_CORE = "org.assertj:assertj-core:3.21.0"
 
     const val MOCKK = "io.mockk:mockk:1.10.6"
+    //const val KOTLIN_TEST_JUNIT5 = "org.jetbrains.kotlin:kotlin-test-junit5:1.6.0-M1"
 }
 
 object AndroidXConfig {
@@ -69,10 +73,6 @@ object GoogleConfig {
 }
 
 object DaggerHiltConfig {
-    private const val HILT_VER = "2.28-alpha"
-    //test
-    const val PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$HILT_VER"
-
     //dagger-hilt
     const val ANDROID = "com.google.dagger:hilt-android:$HILT_VER"
     const val COMPILER = "com.google.dagger:hilt-compiler:$HILT_VER"
@@ -85,11 +85,10 @@ object NetworkConfig {
     private const val MOSHI_VERSION = "1.12.0"
 
     const val RETROFIT = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
-    const val GSON = "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+    const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:4.8.0"
     const val CONVERTER_MOSHI = "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION"
-    const val LOGGING = "com.squareup.okhttp3:logging-interceptor:4.8.0"
+    const val GSON = "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
 
-    const val MOSHI = "com.squareup.moshi:moshi:$MOSHI_VERSION"
     const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:$MOSHI_VERSION"
     const val MOSHI_KOTLIN_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:$MOSHI_VERSION"
 }
