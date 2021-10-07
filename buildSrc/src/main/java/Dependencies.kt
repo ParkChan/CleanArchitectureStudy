@@ -86,7 +86,6 @@ object NetworkConfig {
     const val RETROFIT = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
     const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:4.8.0"
     const val CONVERTER_MOSHI = "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION"
-    const val GSON = "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
 
     const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:$MOSHI_VERSION"
     const val MOSHI_KOTLIN_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:$MOSHI_VERSION"
