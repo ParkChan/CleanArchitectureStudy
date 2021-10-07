@@ -1,6 +1,6 @@
 package com.chan.moviesearcher.data.source
 
-import com.chan.moviesearcher.data.entity.MovieReponse
+import com.chan.moviesearcher.data.entity.MovieResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
@@ -16,7 +16,7 @@ internal interface MovieApi {
         @Query("start") start: Int,
         @Query("query") query: String,
         @Query("display") display: Int = DEFAULT_DISPLAY_COUNT
-    ): MovieReponse
+    ): MovieResponse
 
     companion object {
         const val DEFAULT_DISPLAY_COUNT = 10

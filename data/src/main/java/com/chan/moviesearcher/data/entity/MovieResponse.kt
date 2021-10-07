@@ -4,15 +4,15 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-internal data class MovieReponse(
+internal data class MovieResponse(
     @Json(name = "display")
-    val display: Int,
+    val display: Int = 0,
     @Json(name = "items")
-    val items: List<Item>,
+    val items: List<Item> = emptyList(),
     @Json(name = "lastBuildDate")
-    val lastBuildDate: String,
+    val lastBuildDate: String = "",
     @Json(name = "start")
-    val start: Int,
+    val start: Int = 0,
     @Json(name = "total")
-    val total: Int
+    val total: Int = 0
 )
