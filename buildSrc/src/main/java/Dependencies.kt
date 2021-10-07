@@ -44,7 +44,6 @@ object TestConfig {
     const val ASSERTJ_CORE = "org.assertj:assertj-core:3.21.0"
 
     const val MOCKK = "io.mockk:mockk:1.10.6"
-    //const val KOTLIN_TEST_JUNIT5 = "org.jetbrains.kotlin:kotlin-test-junit5:1.6.0-M1"
 }
 
 object AndroidXConfig {
