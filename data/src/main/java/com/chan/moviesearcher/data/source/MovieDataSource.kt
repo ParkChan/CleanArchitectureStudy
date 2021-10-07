@@ -4,5 +4,5 @@ import com.chan.moviesearcher.data.entity.MovieResponse
 
 internal interface MovieDataSource {
 
-    suspend fun fetchMovies(page:Int, query: String) : MovieResponse
+    suspend fun fetchMovies(page: Int, query: String): Result<MovieResponse>
 }
