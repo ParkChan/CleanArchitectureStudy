@@ -21,6 +21,7 @@ dependencies {
 
     implementation NetworkConfig.MOSHI_KOTLIN
     kapt NetworkConfig.MOSHI_KOTLIN_CODEGEN
+    implementation NetworkConfig.MOSHI_ADAPTERS
 
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE

@@ -2,17 +2,22 @@ package com.chan.moviesearcher.data.entity
 
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import java.io.File
+import java.util.*
+
 
 class MovieResponseTest {
 
     private val moshi = Moshi.Builder()
+        .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
         .add(KotlinJsonAdapterFactory())
         .build()
+
     private lateinit var jsonAdapter: JsonAdapter<MovieResponse>
 
     @BeforeEach
@@ -21,7 +26,7 @@ class MovieResponseTest {
     }
 
     @Test
-    fun `한 영화 정보에 대한 Json 을 엔티티로 변환합니다`() {
+    fun `영화 정보 리스트에 대한 Json을 엔티티로 변환합니다`() {
         val response = jsonAdapter.fromJson(MOVIE_RESPONSE_JSON) ?: MovieResponse()
 
         assertThat(response.total).isEqualTo(88)
@@ -31,10 +36,9 @@ class MovieResponseTest {
     @Test
     fun `json 파일을 읽어와서 엔티티로 변환합니다`() {
 
-        val json = File("src/resources/api-response/1.json").readText()
+        val json = File("src/test/resources/api-response/1.json").readText()
         val response = jsonAdapter.fromJson(json) ?: MovieResponse()
 
-        assertThat(response.lastBuildDate).isEqualTo("Wed, 06 Oct 2021 22:57:59 +0900")
         assertThat(response.total).isEqualTo(88)
         assertThat(response.start).isEqualTo(2)
         assertThat(response.display).isEqualTo(10)

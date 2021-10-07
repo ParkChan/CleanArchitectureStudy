@@ -89,4 +89,5 @@ object NetworkConfig {
 
     const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:$MOSHI_VERSION"
     const val MOSHI_KOTLIN_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:$MOSHI_VERSION"
+    const val MOSHI_ADAPTERS = "com.squareup.moshi:moshi-adapters:$MOSHI_VERSION"
 }
