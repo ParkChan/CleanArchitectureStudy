@@ -19,6 +19,6 @@ internal interface MovieApi {
     ): MovieResponse
 
     companion object {
-        const val DEFAULT_DISPLAY_COUNT = 10
+        private const val DEFAULT_DISPLAY_COUNT = 10
     }
 }
