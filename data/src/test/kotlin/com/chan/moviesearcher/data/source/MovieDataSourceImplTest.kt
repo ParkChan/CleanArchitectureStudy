@@ -21,8 +21,9 @@ class MovieDataSourceImplTest {
     }
 
     @Test
-    internal fun `영화 리스트 가져오기 기능 테스트`() = runBlocking {
+    fun `영화 리스트 가져오기 기능 테스트`() = runBlocking {
         val mockResponse: MovieResponse = mockk()
+
         coEvery {
             movieApi.fetchMovies(1, "a")
         } returns mockResponse
