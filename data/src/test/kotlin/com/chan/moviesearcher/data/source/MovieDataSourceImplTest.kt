@@ -29,7 +29,7 @@ class MovieDataSourceImplTest {
         } returns mockResponse
 
         val result = movieDataSourceImpl
-            .fetchMovies(1, "a")
+            .fetchMovies(start = 1, query = "a")
 
         assertEquals(mockResponse, result)
     }
