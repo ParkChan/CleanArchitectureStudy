@@ -1,8 +1,8 @@
 package com.chan.moviesearcher.data.entity
 
+import com.chan.moviesearcher.data.DateJsonAdapter
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
@@ -14,7 +14,7 @@ import java.util.*
 class MovieResponseTest {
 
     private val moshi = Moshi.Builder()
-        .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
+        .add(Date::class.java, DateJsonAdapter().nullSafe())
         .add(KotlinJsonAdapterFactory())
         .build()
 
