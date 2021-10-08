@@ -8,6 +8,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DateJsonAdapter : JsonAdapter<Date?>() {
+
+    private val dateFormat = SimpleDateFormat(NAVER_DATE_FORMAT, Locale.US)
+
     @Synchronized
     @Throws(IOException::class)
     override fun fromJson(reader: JsonReader): Date? {
@@ -15,7 +18,7 @@ class DateJsonAdapter : JsonAdapter<Date?>() {
             reader.nextNull<Any>() as Date?
         } else {
             val string = reader.nextString()
-            return SimpleDateFormat(NAVER_DATE_FORMAT, Locale.US).parse(string)
+            return dateFormat.parse(string)
         }
     }
 
@@ -26,14 +29,11 @@ class DateJsonAdapter : JsonAdapter<Date?>() {
         if (value == null) {
             writer.nullValue()
         } else {
-            val dateFormat = SimpleDateFormat(DATE_FORMAT)
-            val string = dateFormat.format(value)
-            writer.value(string)
+            writer.value(value.toString())
         }
     }
 
     companion object {
-        private const val DATE_FORMAT = "yyyy MM dd"
         private const val NAVER_DATE_FORMAT = "EEE, dd MMM yyyy HH:mm:ss Z"
     }
 }
