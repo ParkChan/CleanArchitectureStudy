@@ -11,7 +11,7 @@ internal data class MovieResponse(
     @Json(name = "items")
     val items: List<Item> = emptyList(),
     @Json(name = "lastBuildDate")
-    val lastBuildDate: Date = Date(),
+    val lastBuildDate: Date?,
     @Json(name = "start")
     val start: Int = 0,
     @Json(name = "total")
