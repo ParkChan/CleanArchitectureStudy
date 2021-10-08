@@ -29,7 +29,6 @@ class MovieDataSourceImplTest {
 
         val result = movieDataSourceImpl
             .fetchMovies(1, "a")
-            .getOrNull()
 
         assertEquals(mockResponse, result)
     }
