@@ -25,7 +25,7 @@ class MovieDataSourceImplTest {
         val mockResponse: MovieResponse = mockk()
 
         coEvery {
-            movieApi.fetchMovies(1, "a")
+            movieApi.fetchMovies(start = 1, query = "a")
         } returns mockResponse
 
         val result = movieDataSourceImpl
