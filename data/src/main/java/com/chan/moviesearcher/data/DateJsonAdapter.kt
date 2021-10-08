@@ -14,11 +14,10 @@ class DateJsonAdapter : JsonAdapter<Date>() {
     @Synchronized
     @Throws(IOException::class)
     override fun fromJson(reader: JsonReader): Date {
-        return if (reader.peek() == JsonReader.Token.NULL) {
-            reader.nextNull<Any>() as Date
-        } else {
-            val string = reader.nextString()
-            return dateFormat.parse(string)
+        return try {
+            dateFormat.parse(reader.nextString())
+        } catch (e: Exception) {
+            Date(0)
         }
     }
 
