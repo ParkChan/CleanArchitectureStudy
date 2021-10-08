@@ -5,8 +5,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath RootConfig.GRADLE
-        classpath RootConfig.KOTLIN_GRADLE_PLUGIN
+        classpath ProjectConfig.GRADLE
+        classpath ProjectConfig.KOTLIN_GRADLE_PLUGIN
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

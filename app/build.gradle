@@ -42,4 +42,10 @@ dependencies {
     implementation(GoogleConfig.MATERIAL)
     implementation(AndroidXConfig.CONSTRAINT_LAYOUT)
 
+    testImplementation TestConfig.JUNIT_JUPITER_API
+    testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
+    testImplementation TestConfig.JUNIT_JUPITER_PARAMS
+    testImplementation TestConfig.ASSERTJ_CORE
+    testImplementation TestConfig.MOCKK
+
 }
