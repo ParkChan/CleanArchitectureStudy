@@ -1,5 +1,6 @@
 package com.chan.moviesearcher.data.entity
 
+import com.chan.moviesearcher.domain.dto.MovieDto
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import java.util.*
@@ -17,3 +18,14 @@ internal data class MovieResponse(
     @Json(name = "total")
     val total: Int = 0
 )
+
+internal fun MovieResponse.toDto() =
+    MovieDto(
+        display = display,
+        items = items.map {
+            it.toDto()
+        },
+        lastBuildDate = lastBuildDate,
+        start = start,
+        total = total
+    )

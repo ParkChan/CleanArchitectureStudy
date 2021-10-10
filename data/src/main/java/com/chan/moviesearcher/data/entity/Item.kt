@@ -1,5 +1,6 @@
 package com.chan.moviesearcher.data.entity
 
+import com.chan.moviesearcher.domain.dto.ItemDto
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -21,4 +22,15 @@ internal data class Item(
     val title: String = "",
     @Json(name = "userRating")
     val userRating: Double = 0.0
+)
+
+internal fun Item.toDto() = ItemDto(
+    actor = actor,
+    director = director,
+    image = image,
+    link = link,
+    pubDate = pubDate,
+    subtitle = subtitle,
+    title = title,
+    userRating = userRating
 )

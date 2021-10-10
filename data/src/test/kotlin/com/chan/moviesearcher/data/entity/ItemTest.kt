@@ -3,7 +3,7 @@ package com.chan.moviesearcher.data.entity
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
@@ -23,8 +23,18 @@ class ItemTest {
     fun `영화 Item 관련 Json을 엔티티로 변환합니다`() {
         val response = jsonAdapter.fromJson(ITEM_JSON) ?: Item()
 
-        assertThat(response.title).isEqualTo("보이나로비치")
-        assertThat(response.userRating).isEqualTo("0.00")
+        assertEquals("보이나로비치", response.title)
+        assertEquals("https://movie.naver.com/movie/bi/mi/basic.nhn?code=193591", response.link)
+        assertEquals(0.00, response.userRating)
+    }
+
+    @Test
+    fun `Json 엔티티를 Dto로 변환합니다`() {
+        val dto = (jsonAdapter.fromJson(ITEM_JSON) ?: Item()).toDto()
+
+        assertEquals("보이나로비치", dto.title)
+        assertEquals("https://movie.naver.com/movie/bi/mi/basic.nhn?code=193591", dto.link)
+        assertEquals(0.00, dto.userRating)
     }
 
     companion object {
