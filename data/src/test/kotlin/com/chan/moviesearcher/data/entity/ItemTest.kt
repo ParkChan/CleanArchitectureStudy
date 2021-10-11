@@ -30,7 +30,7 @@ class ItemTest {
 
     @Test
     fun `Json 엔티티를 Dto로 변환합니다`() {
-        val dto = Item.mapToDto(jsonAdapter.fromJson(ITEM_JSON) ?: Item())
+        val dto = (jsonAdapter.fromJson(ITEM_JSON) ?: Item()).mapToDto()
 
         assertEquals("보이나로비치", dto.title)
         assertEquals("https://movie.naver.com/movie/bi/mi/basic.nhn?code=193591", dto.link)

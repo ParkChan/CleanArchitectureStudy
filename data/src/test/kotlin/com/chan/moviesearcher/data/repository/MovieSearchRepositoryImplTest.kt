@@ -31,6 +31,6 @@ class MovieSearchRepositoryImplTest {
         val result: MovieDto = repositoryImpl
             .fetchMovies(start = 1, query = "a")
 
-        assertEquals(MovieResponse.mapToDto(mockResponse), result)
+        assertEquals(mockResponse.mapToDto(), result)
     }
 }
