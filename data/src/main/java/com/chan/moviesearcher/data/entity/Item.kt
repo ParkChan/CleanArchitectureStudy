@@ -22,15 +22,19 @@ internal data class Item(
     val title: String = "",
     @Json(name = "userRating")
     val userRating: Double = 0.0
-)
+) {
 
-internal fun Item.toDto() = ItemDto(
-    actor = actor,
-    director = director,
-    image = image,
-    link = link,
-    pubDate = pubDate,
-    subtitle = subtitle,
-    title = title,
-    userRating = userRating
-)
+    companion object {
+        fun mapToDto(item: Item): ItemDto =
+            ItemDto(
+                actor = item.actor,
+                director = item.director,
+                image = item.image,
+                link = item.link,
+                pubDate = item.pubDate,
+                subtitle = item.subtitle,
+                title = item.title,
+                userRating = item.userRating
+            )
+    }
+}

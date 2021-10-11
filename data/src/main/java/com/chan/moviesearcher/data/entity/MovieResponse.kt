@@ -17,15 +17,17 @@ internal data class MovieResponse(
     val start: Int = 0,
     @Json(name = "total")
     val total: Int = 0
-)
-
-internal fun MovieResponse.toDto() =
-    MovieDto(
-        display = display,
-        items = items.map {
-            it.toDto()
-        },
-        lastBuildDate = lastBuildDate,
-        start = start,
-        total = total
-    )
+) {
+    companion object {
+        fun mapToDto(movieResponse: MovieResponse): MovieDto =
+            MovieDto(
+                display = movieResponse.display,
+                items = movieResponse.items.map {
+                    Item.mapToDto(it)
+                },
+                lastBuildDate = movieResponse.lastBuildDate,
+                start = movieResponse.start,
+                total = movieResponse.total,
+            )
+    }
+}

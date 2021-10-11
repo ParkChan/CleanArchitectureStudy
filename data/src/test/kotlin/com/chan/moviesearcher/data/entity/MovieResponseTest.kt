@@ -38,7 +38,7 @@ class MovieResponseTest {
     @Test
     fun `Json 엔티티를 Dto로 변환합니다`() {
         val json = File("src/test/resources/api-response/1.json").readText()
-        val dto = (jsonAdapter.fromJson(json) ?: MovieResponse()).toDto()
+        val dto = MovieResponse.mapToDto(jsonAdapter.fromJson(json) ?: MovieResponse())
 
         assertEquals(88, dto.total)
         assertEquals(2, dto.start)
