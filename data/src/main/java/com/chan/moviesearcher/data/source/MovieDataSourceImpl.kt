@@ -5,6 +5,6 @@ import com.chan.moviesearcher.data.entity.MovieResponse
 internal class MovieDataSourceImpl(
     private val movieApi: MovieApi
 ) : MovieDataSource {
-    override suspend fun fetchMovies(page: Int, query: String): MovieResponse =
-        movieApi.fetchMovies(page, query)
+    override suspend fun fetchMovies(start: Int, query: String): MovieResponse =
+        movieApi.fetchMovies(start, query)
 }
