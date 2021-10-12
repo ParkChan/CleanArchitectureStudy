@@ -1,12 +1,12 @@
-object Kotlin {
-    const val VERSION = "1.5.31"
+object Version {
+    const val KOTLIN = "1.5.31"
+    const val HILT = "2.39.1"
 }
-private const val HILT_VER = "2.28-alpha"
 
 object ProjectConfig {
     const val GRADLE = "com.android.tools.build:gradle:7.0.2"
-    const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.VERSION}"
-    const val PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:$HILT_VER"
+    const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
+    const val HILT_ANDROID_GRADLE_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT}"
     const val ANDROID_JUNIT5 = "de.mannodermaus.gradle.plugins:android-junit5:1.8.0.0"
 }
 
@@ -17,12 +17,14 @@ object AndroidConfig {
     const val TARGER_SDK = 30
     const val VERSION_CODE = 1
     const val VERSION_NAME = "1.0.0"
-    const val TEST_INSTRUMENTATION_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
+    const val ANDROID_JUNIT_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
+    const val RUNNER_BUILDER = "runnerBuilder"
+    const val ANDROID_JUNIT5_BUILDER = "de.mannodermaus.junit5.AndroidJUnit5Builder"
 
 }
 
 object JetBrain {
-    private const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Kotlin.VERSION}"
+    private const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Version.KOTLIN}"
 }
 
 object CoroutineConfig {
@@ -33,17 +35,21 @@ object CoroutineConfig {
 }
 
 object TestConfig {
-    const val JUNIT = "junit:junit:4.13.2"
     private const val JUNIT_VERSION = "5.8.1"
 
     const val EXT_JUNIT = "androidx.test.ext:junit:1.1.1"
-    const val CORE_TESTING = "androidx.arch.core:core-testing:2.1.0"
+    const val ANDROID_CORE_TESTING = "androidx.arch.core:core-testing:2.1.0"
     const val JUNIT_JUPITER_API = "org.junit.jupiter:junit-jupiter-api:$JUNIT_VERSION"
     const val JUNIT_JUPITER_ENGINE = "org.junit.jupiter:junit-jupiter-engine:$JUNIT_VERSION"
     const val JUNIT_JUPITER_PARAMS = "org.junit.jupiter:junit-jupiter-params:$JUNIT_VERSION"
     const val ASSERTJ_CORE = "org.assertj:assertj-core:3.21.0"
 
     const val MOCKK = "io.mockk:mockk:1.10.6"
+
+    const val ANDROID_TEST_CORE = "de.mannodermaus.junit5:android-test-core:1.2.0"
+    const val ANDROID_TEST_RUNNER = "de.mannodermaus.junit5:android-test-runner:1.2.0"
+    const val CORE = "androidx.test:core:1.3.0"
+
 }
 
 object AndroidXConfig {
@@ -72,11 +78,10 @@ object GoogleConfig {
 }
 
 object DaggerHiltConfig {
-    //dagger-hilt
-    const val ANDROID = "com.google.dagger:hilt-android:$HILT_VER"
-    const val COMPILER = "com.google.dagger:hilt-compiler:$HILT_VER"
-    const val TEST = "com.google.dagger:hilt-android-testing:$HILT_VER"
+    const val ANDROID = "com.google.dagger:hilt-android:${Version.HILT}"
+    const val COMPILER = "com.google.dagger:hilt-compiler:${Version.HILT}"
 
+    const val CORE = "com.google.dagger:hilt-core:2.39.1"
 }
 
 object NetworkConfig {

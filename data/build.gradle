@@ -28,6 +28,8 @@ dependencies {
     testImplementation TestConfig.JUNIT_JUPITER_PARAMS
     testImplementation TestConfig.ASSERTJ_CORE
     testImplementation TestConfig.MOCKK
+
+    implementation DaggerHiltConfig.CORE
 }
 
 test {
