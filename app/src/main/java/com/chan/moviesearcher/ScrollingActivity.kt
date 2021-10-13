@@ -1,17 +1,23 @@
 package com.chan.moviesearcher
 
 import android.os.Bundle
-import com.google.android.material.appbar.CollapsingToolbarLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.chan.moviesearcher.databinding.ActivityScrollingBinding
+import com.chan.moviesearcher.viewmodel.MovieSearchViewModel
+import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class ScrollingActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class ScrollingActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityScrollingBinding
+
+    @Inject
+    lateinit var viewModel: MovieSearchViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
