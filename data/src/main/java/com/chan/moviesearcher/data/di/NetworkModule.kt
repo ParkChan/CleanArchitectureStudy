@@ -19,22 +19,22 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor()
+    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor()
         .apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
     @Provides
     @Singleton
-    internal fun provideKotlinJsonAdapterFactory() = KotlinJsonAdapterFactory()
+    fun provideKotlinJsonAdapterFactory() = KotlinJsonAdapterFactory()
 
     @Provides
     @Singleton
-    internal fun provideDateJsonAdapter() = DateJsonAdapter()
+    fun provideDateJsonAdapter() = DateJsonAdapter()
 
     @Provides
     @Singleton
-    internal fun provideMoshi(
+    fun provideMoshi(
         jsonAdapterFactory: KotlinJsonAdapterFactory,
         dateJsonAdapter: DateJsonAdapter
     ): Moshi =
@@ -45,12 +45,12 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun provideMoshiConverter(moshi: Moshi): MoshiConverterFactory =
+    fun provideMoshiConverter(moshi: Moshi): MoshiConverterFactory =
         MoshiConverterFactory.create(moshi)
 
     @Provides
     @Singleton
-    internal fun provideOkHttpClient(
+    fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient =
         OkHttpClient.Builder()
@@ -59,7 +59,7 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun provideRetrofitBuild(
+    fun provideRetrofitBuild(
         converterFactory: MoshiConverterFactory,
         client: OkHttpClient
     ): Retrofit =
@@ -69,7 +69,7 @@ internal class NetworkModule {
             .client(client)
             .build()
 
-    internal companion object {
+    companion object {
         private const val BASE_URL = "https://openapi.naver.com/"
     }
 

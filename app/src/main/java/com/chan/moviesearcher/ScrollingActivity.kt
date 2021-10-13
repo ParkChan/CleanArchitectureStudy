@@ -3,21 +3,19 @@ package com.chan.moviesearcher
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.chan.moviesearcher.databinding.ActivityScrollingBinding
 import com.chan.moviesearcher.viewmodel.MovieSearchViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ScrollingActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityScrollingBinding
 
-    @Inject
-    lateinit var viewModel: MovieSearchViewModel
-
+    private val viewModel: MovieSearchViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +29,7 @@ class ScrollingActivity: AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        viewModel.getMovieList(1,"a")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

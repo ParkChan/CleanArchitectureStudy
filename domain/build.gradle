@@ -11,4 +11,5 @@ java {
 
 dependencies {
     implementation DaggerHiltConfig.CORE
+    kapt DaggerHiltConfig.COMPILER
 }

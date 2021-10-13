@@ -1,29 +1,29 @@
 package com.chan.moviesearcher.data.di
 
 import com.chan.moviesearcher.data.repository.MovieSearchRepositoryImpl
-import com.chan.moviesearcher.data.source.MovieApi
 import com.chan.moviesearcher.data.source.MovieDataSource
 import com.chan.moviesearcher.data.source.MovieDataSourceImpl
 import com.chan.moviesearcher.domain.repository.MovieSearchRepository
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal class MovieSearchModule {
+internal abstract class MovieSearchModule {
 
-    @Provides
+    @Binds
     @Singleton
-    internal fun provideMovieDataSource(movieApi: MovieApi): MovieDataSource =
-        MovieDataSourceImpl(movieApi)
+    abstract fun provideMovieDataSource(
+        movieDataSource: MovieDataSourceImpl
+    ): MovieDataSource
 
-    @Provides
+    @Binds
     @Singleton
-    internal fun provideMovieSearchRepository(dataSource: MovieDataSource): MovieSearchRepository =
-        MovieSearchRepositoryImpl(dataSource)
-
+    abstract fun provideMovieSearchRepository(
+        movieSearchRepositoryImpl: MovieSearchRepositoryImpl
+    ): MovieSearchRepository
 
 }

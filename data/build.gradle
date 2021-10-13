@@ -15,13 +15,13 @@ dependencies {
     implementation CoroutineConfig.CORE
     testImplementation CoroutineConfig.TEST
 
-    implementation NetworkConfig.RETROFIT
-    implementation NetworkConfig.LOGGING_INTERCEPTOR
-    implementation NetworkConfig.CONVERTER_MOSHI
+    api NetworkConfig.RETROFIT
+    api NetworkConfig.LOGGING_INTERCEPTOR
+    api NetworkConfig.CONVERTER_MOSHI
 
-    implementation NetworkConfig.MOSHI_KOTLIN
+    api NetworkConfig.MOSHI_KOTLIN
     kapt NetworkConfig.MOSHI_KOTLIN_CODEGEN
-    implementation NetworkConfig.MOSHI_ADAPTERS
+    api NetworkConfig.MOSHI_ADAPTERS
 
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
@@ -30,6 +30,8 @@ dependencies {
     testImplementation TestConfig.MOCKK
 
     implementation DaggerHiltConfig.CORE
+    kapt DaggerHiltConfig.COMPILER
+
 }
 
 test {

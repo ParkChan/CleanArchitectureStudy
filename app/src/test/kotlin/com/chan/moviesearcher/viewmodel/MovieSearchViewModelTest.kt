@@ -8,6 +8,7 @@ import com.chan.moviesearcher.util.getOrAwaitValue
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -32,7 +33,7 @@ class MovieSearchViewModelTest {
     @ExperimentalCoroutinesApi
     @Test
     @DisplayName("라이브 데이터 테스트 입니다")
-    fun `라이브 데이터 테스트`() = mainCoroutineRule.runBlockingTest {
+    fun `라이브 데이터 테스트`() = runBlocking {
 
         val mockRes: MovieDto = mockk(relaxed = true)
 
@@ -54,6 +55,5 @@ class MovieSearchViewModelTest {
             mockRes,
             viewModel.movies.getOrAwaitValue()
         )
-        println("End")
     }
 }

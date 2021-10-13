@@ -40,17 +40,19 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation project(":domain")
+    implementation project(":data")
 
-    implementation(AndroidXConfig.CORE_KTX)
-    implementation(AndroidXConfig.APPCOMPAT)
-    implementation(GoogleConfig.MATERIAL)
-    implementation(AndroidXConfig.CONSTRAINT_LAYOUT)
+    implementation AndroidXConfig.CORE_KTX
+    implementation AndroidXConfig.APPCOMPAT
+    implementation GoogleConfig.MATERIAL
+    implementation AndroidXConfig.CONSTRAINT_LAYOUT
+    implementation AndroidXConfig.ACTIVITY_KTX
+    implementation AndroidXConfig.FRAGMENT_KTX
 
-    implementation(AndroidXConfig.LIFECYCLE_VIEW_MODEL)
-    implementation(AndroidXConfig.LIFECYCLE_RUNTIME)
-    implementation(AndroidXConfig.LIFECYCLE_LIVEDATA)
+    implementation AndroidXConfig.LIFECYCLE_VIEW_MODEL
+    implementation AndroidXConfig.LIFECYCLE_RUNTIME
+    implementation AndroidXConfig.LIFECYCLE_LIVEDATA
 
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
