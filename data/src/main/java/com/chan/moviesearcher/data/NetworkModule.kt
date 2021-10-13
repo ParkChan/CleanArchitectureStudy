@@ -2,38 +2,65 @@ package com.chan.moviesearcher.data
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
+@Module
+@InstallIn(SingletonComponent::class)
 internal object NetworkModule {
 
     private const val BASE_URL = "https://openapi.naver.com/"
 
-    internal fun httpLoggingInterceptor() = HttpLoggingInterceptor()
+    @Provides
+    @Singleton
+    internal fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor()
         .apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-    internal fun kotlinJsonAdapterFactory() = KotlinJsonAdapterFactory()
+    @Provides
+    @Singleton
+    internal fun provideKotlinJsonAdapterFactory() = KotlinJsonAdapterFactory()
 
-    internal fun moshi(jsonAdapterFactory: KotlinJsonAdapterFactory): Moshi =
+    @Provides
+    @Singleton
+    internal fun provideDateJsonAdapter() = DateJsonAdapter()
+
+    @Provides
+    @Singleton
+    internal fun provideMoshi(
+        jsonAdapterFactory: KotlinJsonAdapterFactory,
+        dateJsonAdapter: DateJsonAdapter
+    ): Moshi =
         Moshi.Builder()
+            .add(dateJsonAdapter)
             .add(jsonAdapterFactory)
             .build()
 
-    internal fun moshiConverter(moshi: Moshi): MoshiConverterFactory =
+    @Provides
+    @Singleton
+    internal fun provideMoshiConverter(moshi: Moshi): MoshiConverterFactory =
         MoshiConverterFactory.create(moshi)
 
-    internal fun okHttpClient(
-        loggingInterceptor: HttpLoggingInterceptor,
+    @Provides
+    @Singleton
+    internal fun provideOkHttpClient(
+        loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
 
-    internal fun retrofitBuild(
+    @Provides
+    @Singleton
+    internal fun provideRetrofitBuild(
         converterFactory: MoshiConverterFactory,
         client: OkHttpClient
     ): Retrofit =

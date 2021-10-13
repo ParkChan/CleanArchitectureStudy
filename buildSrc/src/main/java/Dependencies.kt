@@ -46,8 +46,8 @@ object TestConfig {
 
     const val MOCKK = "io.mockk:mockk:1.10.6"
 
-    const val ANDROID_TEST_CORE = "de.mannodermaus.junit5:android-test-core:1.2.0"
-    const val ANDROID_TEST_RUNNER = "de.mannodermaus.junit5:android-test-runner:1.2.0"
+    const val ANDROID_TEST_CORE = "de.mannodermaus.junit5:android-test-core:1.3.0"
+    const val ANDROID_TEST_RUNNER = "de.mannodermaus.junit5:android-test-runner:1.3.0"
     const val CORE = "androidx.test:core:1.3.0"
 
 }
