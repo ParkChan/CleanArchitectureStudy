@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class SourceModule {
+internal class SourceModule {
 
     @Provides
     @Singleton

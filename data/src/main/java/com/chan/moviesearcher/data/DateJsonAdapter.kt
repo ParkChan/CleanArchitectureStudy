@@ -7,7 +7,7 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DateJsonAdapter : JsonAdapter<Date>() {
+internal class DateJsonAdapter : JsonAdapter<Date>() {
 
     private val dateFormat = SimpleDateFormat(NAVER_DATE_FORMAT, Locale.US)
 
@@ -31,7 +31,7 @@ class DateJsonAdapter : JsonAdapter<Date>() {
         }
     }
 
-    companion object {
+    internal companion object {
         private const val NAVER_DATE_FORMAT = "EEE, dd MMM yyyy HH:mm:ss Z"
     }
 }

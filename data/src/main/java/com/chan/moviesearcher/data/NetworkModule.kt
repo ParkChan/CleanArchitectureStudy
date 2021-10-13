@@ -68,7 +68,7 @@ internal class NetworkModule {
             .client(client)
             .build()
 
-    companion object {
+    internal companion object {
         private const val BASE_URL = "https://openapi.naver.com/"
     }
 
