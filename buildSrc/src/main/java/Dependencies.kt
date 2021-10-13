@@ -6,7 +6,8 @@ object Version {
 object ProjectConfig {
     const val GRADLE = "com.android.tools.build:gradle:7.0.2"
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
-    const val HILT_ANDROID_GRADLE_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT}"
+    const val HILT_ANDROID_GRADLE_PLUGIN =
+        "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT}"
     const val ANDROID_JUNIT5 = "de.mannodermaus.gradle.plugins:android-junit5:1.8.0.0"
 }
 
@@ -95,4 +96,8 @@ object NetworkConfig {
     const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:$MOSHI_VERSION"
     const val MOSHI_KOTLIN_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:$MOSHI_VERSION"
     const val MOSHI_ADAPTERS = "com.squareup.moshi:moshi-adapters:$MOSHI_VERSION"
+}
+
+object LogConfig {
+    const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
 }
