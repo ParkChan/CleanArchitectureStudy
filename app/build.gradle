@@ -68,6 +68,10 @@ dependencies {
     implementation DaggerHiltConfig.ANDROID
     kapt DaggerHiltConfig.COMPILER
 
+    implementation CoroutineConfig.CORE
+    implementation CoroutineConfig.ANDROID
+    testImplementation CoroutineConfig.TEST
+
     implementation LogConfig.TIMBER
 
 }
