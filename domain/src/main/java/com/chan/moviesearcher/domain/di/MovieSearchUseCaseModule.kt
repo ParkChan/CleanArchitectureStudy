@@ -1,8 +1,8 @@
-package com.chan.moviesearcher.di
+package com.chan.moviesearcher.domain.di
 
-import com.chan.moviesearcher.domain.MovieSearchUseCase
 import com.chan.moviesearcher.domain.repository.MovieSearchRepository
-import com.chan.moviesearcher.usecase.MovieSearchUseCaseImpl
+import com.chan.moviesearcher.domain.usecase.MovieSearchUseCase
+import com.chan.moviesearcher.domain.usecase.MovieSearchUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,4 +17,5 @@ class MovieSearchUseCaseModule {
     @Singleton
     fun provideMovieSearchUseCase(repository: MovieSearchRepository): MovieSearchUseCase =
         MovieSearchUseCaseImpl(repository)
+
 }

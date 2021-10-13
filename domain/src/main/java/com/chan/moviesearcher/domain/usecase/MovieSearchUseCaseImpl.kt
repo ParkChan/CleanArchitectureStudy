@@ -1,6 +1,5 @@
-package com.chan.moviesearcher.usecase
+package com.chan.moviesearcher.domain.usecase
 
-import com.chan.moviesearcher.domain.MovieSearchUseCase
 import com.chan.moviesearcher.domain.dto.MovieDto
 import com.chan.moviesearcher.domain.repository.MovieSearchRepository
 import javax.inject.Inject

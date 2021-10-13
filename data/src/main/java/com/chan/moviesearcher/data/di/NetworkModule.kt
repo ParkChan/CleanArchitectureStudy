@@ -1,5 +1,6 @@
-package com.chan.moviesearcher.data
+package com.chan.moviesearcher.data.di
 
+import com.chan.moviesearcher.data.DateJsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -63,7 +64,7 @@ internal class NetworkModule {
         client: OkHttpClient
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl(Companion.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(converterFactory)
             .client(client)
             .build()

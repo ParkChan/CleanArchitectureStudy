@@ -1,7 +1,7 @@
 package com.chan.moviesearcher.viewmodel
 
 import com.chan.moviesearcher.domain.dto.MovieDto
-import com.chan.moviesearcher.usecase.MovieSearchUseCaseImpl
+import com.chan.moviesearcher.domain.usecase.MovieSearchUseCaseImpl
 import com.chan.moviesearcher.util.InstantTaskExecutorExtension
 import com.chan.moviesearcher.util.MainCoroutineRule
 import com.chan.moviesearcher.util.getOrAwaitValue

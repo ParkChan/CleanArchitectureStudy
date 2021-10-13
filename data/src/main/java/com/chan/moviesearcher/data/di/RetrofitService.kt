@@ -1,4 +1,4 @@
-package com.chan.moviesearcher.data
+package com.chan.moviesearcher.data.di
 
 import com.chan.moviesearcher.data.source.MovieApi
 import dagger.Module
