@@ -14,9 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object NetworkModule {
-
-    private const val BASE_URL = "https://openapi.naver.com/"
+internal class NetworkModule {
 
     @Provides
     @Singleton
@@ -65,9 +63,13 @@ internal object NetworkModule {
         client: OkHttpClient
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(Companion.BASE_URL)
             .addConverterFactory(converterFactory)
             .client(client)
             .build()
+
+    companion object {
+        private const val BASE_URL = "https://openapi.naver.com/"
+    }
 
 }
