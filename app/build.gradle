@@ -48,6 +48,10 @@ dependencies {
     implementation(GoogleConfig.MATERIAL)
     implementation(AndroidXConfig.CONSTRAINT_LAYOUT)
 
+    implementation(AndroidXConfig.LIFECYCLE_VIEW_MODEL)
+    implementation(AndroidXConfig.LIFECYCLE_RUNTIME)
+    implementation(AndroidXConfig.LIFECYCLE_LIVEDATA)
+
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
     testImplementation TestConfig.JUNIT_JUPITER_PARAMS
