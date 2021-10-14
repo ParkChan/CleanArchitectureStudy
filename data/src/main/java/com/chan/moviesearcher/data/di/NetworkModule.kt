@@ -19,22 +19,22 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor()
+    fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor()
         .apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
     @Provides
     @Singleton
-    fun provideKotlinJsonAdapterFactory() = KotlinJsonAdapterFactory()
+    fun providesKotlinJsonAdapterFactory() = KotlinJsonAdapterFactory()
 
     @Provides
     @Singleton
-    fun provideDateJsonAdapter() = DateJsonAdapter()
+    fun providesDateJsonAdapter() = DateJsonAdapter()
 
     @Provides
     @Singleton
-    fun provideMoshi(
+    fun providesMoshi(
         jsonAdapterFactory: KotlinJsonAdapterFactory,
         dateJsonAdapter: DateJsonAdapter
     ): Moshi =
@@ -45,12 +45,12 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMoshiConverter(moshi: Moshi): MoshiConverterFactory =
+    fun providesMoshiConverter(moshi: Moshi): MoshiConverterFactory =
         MoshiConverterFactory.create(moshi)
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(
+    fun providesOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient =
         OkHttpClient.Builder()
@@ -59,7 +59,7 @@ internal class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofitBuild(
+    fun providesRetrofitBuild(
         converterFactory: MoshiConverterFactory,
         client: OkHttpClient
     ): Retrofit =

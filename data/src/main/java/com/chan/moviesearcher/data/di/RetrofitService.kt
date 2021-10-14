@@ -14,6 +14,6 @@ internal class RetrofitService {
 
     @Provides
     @Singleton
-    fun provideMovieService(retrofit: Retrofit): MovieApi =
+    fun providesMovieService(retrofit: Retrofit): MovieApi =
         retrofit.create(MovieApi::class.java)
 }

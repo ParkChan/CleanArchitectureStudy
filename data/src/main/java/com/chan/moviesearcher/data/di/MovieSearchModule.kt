@@ -16,13 +16,13 @@ internal abstract class MovieSearchModule {
 
     @Binds
     @Singleton
-    abstract fun provideMovieDataSource(
+    abstract fun bindsMovieDataSource(
         movieDataSource: MovieDataSourceImpl
     ): MovieDataSource
 
     @Binds
     @Singleton
-    abstract fun provideMovieSearchRepository(
+    abstract fun bindsMovieSearchRepository(
         movieSearchRepositoryImpl: MovieSearchRepositoryImpl
     ): MovieSearchRepository
 

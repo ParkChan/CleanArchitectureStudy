@@ -14,6 +14,6 @@ internal abstract class MovieSearchUseCaseModule {
 
     @Binds
     @Singleton
-    abstract fun provideMovieSearchUseCase(useCase: MovieSearchUseCaseImpl): MovieSearchUseCase
+    abstract fun bindsMovieSearchUseCase(useCase: MovieSearchUseCaseImpl): MovieSearchUseCase
 
 }
