@@ -7,7 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.chan.moviesearcher.domain.dto.MovieDto
 import com.chan.moviesearcher.domain.usecase.MovieSearchUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -21,7 +23,11 @@ class MovieSearchViewModel @Inject constructor(
     private val _throwable = MutableLiveData<Throwable>()
     val throwable: LiveData<Throwable> get() = _throwable
 
-    fun getMovieList(start: Int, query: String) = viewModelScope.launch {
+    private val handler = CoroutineExceptionHandler { _, exception ->
+        Timber.e(exception.message)
+    }
+
+    fun getMovieList(start: Int, query: String) = viewModelScope.launch(handler) {
         useCase.request(start, query)
             .onSuccess {
                 _movies.value = it
@@ -29,4 +35,6 @@ class MovieSearchViewModel @Inject constructor(
                 _throwable.value = it
             }
     }
+
+
 }
