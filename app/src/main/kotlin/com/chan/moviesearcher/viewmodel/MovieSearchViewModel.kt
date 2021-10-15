@@ -23,11 +23,11 @@ class MovieSearchViewModel @Inject constructor(
     private val _throwable = MutableLiveData<Throwable>()
     val throwable: LiveData<Throwable> get() = _throwable
 
-    private val handler = CoroutineExceptionHandler { _, exception ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
         Timber.e(exception.message)
     }
 
-    fun getMovieList(start: Int, query: String) = viewModelScope.launch(handler) {
+    fun getMovieList(start: Int, query: String) = viewModelScope.launch(coroutineExceptionHandler) {
         useCase.request(start, query)
             .onSuccess {
                 _movies.value = it
