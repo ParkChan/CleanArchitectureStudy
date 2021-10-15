@@ -1,17 +1,16 @@
 package com.chan.moviesearcher.data
 
-import com.squareup.moshi.JsonAdapter
-import com.squareup.moshi.JsonReader
-import com.squareup.moshi.JsonWriter
+import com.squareup.moshi.*
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DateJsonAdapter : JsonAdapter<Date>() {
+internal class DateJsonAdapter : JsonAdapter<Date>() {
 
     private val dateFormat = SimpleDateFormat(NAVER_DATE_FORMAT, Locale.US)
 
     @Synchronized
+    @FromJson
     @Throws(IOException::class)
     override fun fromJson(reader: JsonReader): Date {
         return try {
@@ -22,6 +21,7 @@ class DateJsonAdapter : JsonAdapter<Date>() {
     }
 
     @Synchronized
+    @ToJson
     @Throws(IOException::class)
     override fun toJson(writer: JsonWriter, value: Date?) {
         if (value == null) {
