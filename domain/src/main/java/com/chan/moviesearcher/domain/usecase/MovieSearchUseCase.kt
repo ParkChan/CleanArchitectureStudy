@@ -1,4 +1,4 @@
-package com.chan.moviesearcher.domain
+package com.chan.moviesearcher.domain.usecase
 
 import com.chan.moviesearcher.domain.dto.MovieDto
 

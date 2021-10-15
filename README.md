@@ -1,2 +1,7 @@
 # CleanArchitureStudy
-- 클린아키텍처 학습을 위해 영화 정보 리스트를 불러와서 화면에 보여줍니다.
+
+## 목표
+- Android clean architecture 를 학습하는 용도로 영화 리스트를 보여주는 토이 프로젝트를 진행합니다.
+
+## 기타
+- 네이버 OPEN API 검색 > 영화

@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'de.mannodermaus.android-junit5'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -12,12 +15,20 @@ android {
         targetSdk AndroidConfig.COMPILE_AND_TARGET_SDK
         versionCode AndroidConfig.VERSION_CODE
         versionName AndroidConfig.VERSION_NAME
+
+        testInstrumentationRunner AndroidConfig.ANDROID_JUNIT_RUNNER
+        testInstrumentationRunnerArgument AndroidConfig.RUNNER_BUILDER, AndroidConfig.ANDROID_JUNIT5_BUILDER
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'test/kotlin'
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -30,22 +41,47 @@ android {
     buildFeatures {
         viewBinding true
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
 
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation project(":domain")
+    implementation project(":data")
 
-    implementation(AndroidXConfig.CORE_KTX)
-    implementation(AndroidXConfig.APPCOMPAT)
-    implementation(GoogleConfig.MATERIAL)
-    implementation(AndroidXConfig.CONSTRAINT_LAYOUT)
+    implementation AndroidXConfig.CORE_KTX
+    implementation AndroidXConfig.APPCOMPAT
+    implementation GoogleConfig.MATERIAL
+    implementation AndroidXConfig.CONSTRAINT_LAYOUT
+    implementation AndroidXConfig.ACTIVITY_KTX
+    implementation AndroidXConfig.FRAGMENT_KTX
+
+    implementation AndroidXConfig.LIFECYCLE_VIEW_MODEL
+    implementation AndroidXConfig.LIFECYCLE_RUNTIME
+    implementation AndroidXConfig.LIFECYCLE_LIVEDATA
 
     testImplementation TestConfig.JUNIT_JUPITER_API
     testRuntimeOnly TestConfig.JUNIT_JUPITER_ENGINE
     testImplementation TestConfig.JUNIT_JUPITER_PARAMS
     testImplementation TestConfig.ASSERTJ_CORE
     testImplementation TestConfig.MOCKK
+
+    androidTestImplementation TestConfig.ANDROID_CORE_TESTING
+    androidTestImplementation TestConfig.JUNIT_JUPITER_API
+    androidTestImplementation TestConfig.ASSERTJ_CORE
+    androidTestImplementation TestConfig.ANDROID_TEST_CORE
+    androidTestRuntimeOnly TestConfig.ANDROID_TEST_RUNNER
+    androidTestImplementation TestConfig.CORE
+
+    implementation DaggerHiltConfig.ANDROID
+    kapt DaggerHiltConfig.COMPILER
+
+    implementation CoroutineConfig.CORE
+    implementation CoroutineConfig.ANDROID
+    testImplementation CoroutineConfig.TEST
+
+    implementation LogConfig.TIMBER
 
 }
