@@ -23,8 +23,6 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'test/kotlin'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
-        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
 
     buildTypes {
