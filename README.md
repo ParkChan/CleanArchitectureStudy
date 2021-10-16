@@ -9,6 +9,8 @@
 - 네이버 OPEN API 검색 > 영화
   [링크주소]
   (https://developers.naver.com/docs/search/movie/)
+  
+## 스터디 진행자 : @BeokBeok
 
 ---
 
@@ -68,5 +70,3 @@ ref. https://github.com/google/iosched/tree/main/shared/src/main/java/com/google
 implementation com.google.dagger:hilt-core:${Version.HILT}
 kapt com.google.dagger:hilt-compiler:${Version.HILT}
 ```
-
-### @BeokBeok 님 수고 많으셨습니다.
