@@ -11,12 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CleanArchitureStudy">
+        android:theme="@style/Theme.CleanArchitectureStudy">
         <activity
             android:name=".ScrollingActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.CleanArchitureStudy.NoActionBar">
+            android:theme="@style/Theme.CleanArchitectureStudy.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

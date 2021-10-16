@@ -1,4 +1,4 @@
-# CleanArchitureStudy
+# CleanArchitectureStudy
 
 ## 목표
 - Android clean architecture 를 학습하는 용도로 영화 리스트를 보여주는 토이 프로젝트를 진행합니다.
