@@ -22,7 +22,7 @@
 - app 모듈은 data, domain 모듈을 implementation 해야 한다.
 
 ### Flow
-![image](https://user-images.githubusercontent.com/48344355/135714863-631606bc-d918-4e09-8c1e-aa840edb31a3.png)
+![1_Y3c0eHFi4SHUJbhdOVdt7g](https://user-images.githubusercontent.com/7857824/137582679-4ce947ec-2b1f-4eff-b9db-1bd52b2d7856.jpeg)
 
 ---
 
