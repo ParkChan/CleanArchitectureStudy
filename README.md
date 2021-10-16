@@ -13,37 +13,50 @@
 ---
 
 ### Step1
-[요구사항]
+### 요구 사항
 - 순수 코틀린 모듈인 domain 모듈을 만든다.
 - 순수 코틀린 모듈인 data 모듈을 만든다.
 - data 모듈은 domain 모듈을 implementation 해야 한다.
 - app 모듈은 data, domain 모듈을 implementation 해야 한다.
 
+### Flow
+![image](https://user-images.githubusercontent.com/48344355/135714863-631606bc-d918-4e09-8c1e-aa840edb31a3.png)
+
 ---
 
 ### Step2
-[요구사항]
-네이버 API를 사용해서 영화 정보를 가져와야 합니다
+### 요구 사항
+#### 네이버 API를 사용해서 영화 정보를 가져와야 합니다
 - GET, v1/search/movie.json
 
-프로그래밍 요구 사항
-영화 정보를 가져오는 API는 data 모듈에 구현되어야 합니다
-data 모듈의 구현체는 모두 internal 키워드가 붙어야 합니다
+### 프로그래밍 요구 사항
+1. 영화 정보를 가져오는 API는 data 모듈에 구현되어야 합니다
+2. data 모듈의 구현체는 모두 internal 키워드가 붙어야 합니다
 
 ---
 
 ### Step3
-요구 사항
-네이버 API를 사용해서 영화 정보를 가져와야 합니다
-GET, v1/search/movie.json
-프로그래밍 요구 사항
-영화 정보를 가져오는 API는 data 모듈에 구현되어야 합니다
-data 모듈의 구현체는 모두 internal 키워드가 붙어야 합니다
+### 요구 사항
+#### UseCase를 구현합니다.
+- UseCase는 사용자의 행위를 말하며, 하나의 행위에 대해서 캡슐화를 합니다.
+ref. https://github.com/google/iosched/tree/main/shared/src/main/java/com/google/samples/apps/iosched/shared/domain
+
+#### UseCase 사용 시 장점
+- ViewModel에서 사용자가 어떤 행위를 하는지 쉽게 파악이 가능합니다.
+- 행위를 추가하고 제거할 때 코드 변경이 적습니다.
+
+#### UseCase 사용 시 단점
+- 코드가 많이 생성됩니다.
+- ViewModel의 생성자가 많이 생길 수 있습니다. (Home 화면일 경우)
+
+### 프로그래밍 요구 사항
+- Repository 인터페이스는 domain 모듈에 있어야 하며, 구현체는 data 모듈에 있어야 합니다.
+- Repository 구현체에서 리턴하는 타입은, data 모듈에 정의된 모델이 아닌 domain 모듈에 정의된 모델로 리턴해야 합니다.
 
 ---
 
 ### Step4
-프로그래밍 요구사항
+### 프로그래밍 요구사항
 Hilt를 사용해서 의존성을 주입해주세요.
 UseCase가 Inject되어있는 빈 ViewModel까지 만들어주세요.
 ViewModel을 만들어야만 정상적으로 DI가 적용되서 빌드가 되는지 확인이 가능합니다.
