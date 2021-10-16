@@ -81,7 +81,7 @@ object GoogleConfig {
 object DaggerHiltConfig {
     const val ANDROID = "com.google.dagger:hilt-android:${Version.HILT}"
 
-    const val CORE = "com.google.dagger:hilt-core:2.39.1"
+    const val CORE = "com.google.dagger:hilt-core:${Version.HILT}"
     const val COMPILER = "com.google.dagger:hilt-compiler:${Version.HILT}"
 }
 
