@@ -62,7 +62,7 @@ ref. https://github.com/google/iosched/tree/main/shared/src/main/java/com/google
         - ViewModel을 만들어야만 정상적으로 DI가 적용되서 빌드가 되는지 확인이 가능합니다.
 - data 모듈에는 internal 키워드를 유지해주세요.
 - app 모듈을 제외한 나머지 모듈에서는 hilt-core를 사용하시면 됩니다.
-참고 : https://mvnrepository.com/artifact/com.google.dagger/hilt-core
+- 참고 : https://mvnrepository.com/artifact/com.google.dagger/hilt-core
 
 ```
 implementation com.google.dagger:hilt-core:${Version.HILT}
