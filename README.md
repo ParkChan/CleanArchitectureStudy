@@ -14,15 +14,15 @@
 
 ---
 
+### Flow
+![그림1](https://user-images.githubusercontent.com/7857824/140294143-0c913c54-e6e0-4482-b54d-3101fe06e737.png)
+
 ### Step1
 ### 요구 사항
 - 순수 코틀린 모듈인 domain 모듈을 만든다.
 - 순수 코틀린 모듈인 data 모듈을 만든다.
 - data 모듈은 domain 모듈을 implementation 해야 한다.
 - app 모듈은 data, domain 모듈을 implementation 해야 한다.
-
-### Flow
-![그림1](https://user-images.githubusercontent.com/7857824/140294143-0c913c54-e6e0-4482-b54d-3101fe06e737.png)
 
 ---
 
