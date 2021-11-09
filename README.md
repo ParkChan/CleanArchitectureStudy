@@ -15,7 +15,7 @@
 ---
 
 ### Flow
-![그림1](https://user-images.githubusercontent.com/7857824/140294143-0c913c54-e6e0-4482-b54d-3101fe06e737.png)
+![클린아키텍처](https://user-images.githubusercontent.com/7857824/140921082-d5b0d673-9899-4774-932d-04bad64f7cc4.png))
 
 ### Step1
 ### 요구 사항
