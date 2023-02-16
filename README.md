@@ -70,3 +70,5 @@ ref. https://github.com/google/iosched/tree/main/shared/src/main/java/com/google
 implementation com.google.dagger:hilt-core:${Version.HILT}
 kapt com.google.dagger:hilt-compiler:${Version.HILT}
 ```
+
+[클린아키텍처 그 이후 멀티모듈](https://github.com/ParkChan/CleanArchitectureStudy_Next)
