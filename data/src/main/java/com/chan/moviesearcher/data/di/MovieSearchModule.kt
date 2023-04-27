@@ -23,7 +23,7 @@ internal abstract class MovieSearchModule {
     @Binds
     @Singleton
     abstract fun bindsMovieSearchRepository(
-        movieSearchRepositoryImpl: MovieSearchRepositoryImpl
+        movieSearchRepository: MovieSearchRepositoryImpl
     ): MovieSearchRepository
 
 }
